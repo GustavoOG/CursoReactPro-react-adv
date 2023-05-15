@@ -15,8 +15,8 @@ const LazyLayout = lazy(() => import(/* webpackChunkName :"LazyPage1"*/'../01-la
 
 export const routes: Route[] = [
     {
-        to: '/lazyload/*',
-        path: '/lazyload//*',
+        to: '/lazyload',
+        path: '/lazyload/*',
         Component: LazyLayout,
         name: 'Lazy Layout - Dash' 
     }, {
