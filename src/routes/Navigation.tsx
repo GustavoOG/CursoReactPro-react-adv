@@ -41,16 +41,16 @@ export const Navigation = () => {
             </li>
           </ul>
         </nav>
+        <Routes>
+          <Route path="about" element={<h1>About Page</h1>}></Route>
+          <Route path="users" element={<h1>Users Page</h1>}></Route>
+          <Route path="home" element={<h1>Home Page</h1>}></Route>
+          <Route
+            path="/*"
+            element={<Navigate to="/home" replace></Navigate>}
+          ></Route>
+        </Routes>
       </div>
-      <Routes>
-        <Route path="about" element={<h1>About Page</h1>}></Route>
-        <Route path="users" element={<h1>Users Page</h1>}></Route>
-        <Route path="home" element={<h1>Home Page</h1>}></Route>
-        <Route
-          path="/*"
-          element={<Navigate to="/home" replace></Navigate>}
-        ></Route>
-      </Routes>
     </BrowserRouter>
   );
 };
