@@ -4,7 +4,7 @@ import { ReactElement } from "react";
 export interface Product {
     id: string;
     title: string;
-    image?: string;
+    img?: string;
 }
 
 export interface ProductContextProps {
@@ -18,6 +18,8 @@ export interface ProductCardProps {
     children?: ReactElement | ReactElement[];
     className?: string;
     style?: React.CSSProperties;
+    onChange?: (args: onChangeArgs) => void;
+    value?: number;
 }
 export interface ProductTitleProps {
     title?: string;
@@ -42,3 +44,14 @@ export interface ProductCardHOCProps {
     Image: (Props: ProductImageProps) => JSX.Element,
     Buttons: ({ className }: ProductButtonsProps) => JSX.Element;
 }
+
+
+export interface onChangeArgs {
+    product: Product;
+    count: number;
+}
+
+export interface ProductInCart extends Product {
+    count: number;
+  }
+  

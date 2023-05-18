@@ -10,12 +10,12 @@ export const ProductImage = ({ img , className , style}: ProductImageProps) => {
   const { product } = useContext(ProductContext);
   let imgToShow: string;
   if (img) imgToShow = img;
-  else if (product.image) imgToShow = product.image;
+  else if (product.img) imgToShow = product.img;
   else imgToShow = noImage;
 
   return (
     <img
-      className={`${styles.productCard} ${className}`}
+      className={`${styles.ProductImage} ${className}`}
       style={style}
       src={imgToShow}
       alt="Product image"

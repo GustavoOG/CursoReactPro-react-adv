@@ -1,31 +1,17 @@
 import { createContext } from "react";
-import {
-  ProductContextProps,
-  ProductCardProps,
-} from "../interfaces/interfaces";
+import { ProductContextProps, ProductCardProps } from "../interfaces/interfaces";
 import { useProduct } from "../hooks/useProduct";
 import styles from "../styles/styles.module.css";
 
 export const ProductContext = createContext({} as ProductContextProps);
 const { Provider } = ProductContext;
 
-export const ProductCard = ({
-  children,
-  product,
-  className,
-  style,
-}: ProductCardProps) => {
-  const { counter, increaseBy } = useProduct();
+export const ProductCard = ({ children, product, className, style, onChange, value }: ProductCardProps) => {
+  const { counter, increaseBy } = useProduct({ onChange, product, value });
   return (
     <Provider value={{ counter, increaseBy, product }}>
       <div className={`${styles.productCard} ${className}`} style={style}>
         {children}
-        {/* <ProductImage img={product.image}></ProductImage>
-      <ProductTitle title={product.title}></ProductTitle>
-      <ProductButtons
-        counter={counter}
-        increaseBy={increaseBy}
-      ></ProductButtons> */}
       </div>
     </Provider>
   );
