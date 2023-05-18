@@ -1,6 +1,3 @@
-import { ReactElement } from "react";
-
-
 export interface Product {
     id: string;
     title: string;
@@ -9,18 +6,28 @@ export interface Product {
 
 export interface ProductContextProps {
     counter: number;
-    increaseBy: (value: number) => void;
+    maxCount?: number;
     product: Product;
+    increaseBy: (value: number) => void;
 }
 
 export interface ProductCardProps {
     product: Product;
-    children?: ReactElement | ReactElement[];
+    //    children?: ReactElement | ReactElement[];   
+    children: (args: ProductCartHandlers) => JSX.Element;
     className?: string;
     style?: React.CSSProperties;
     onChange?: (args: onChangeArgs) => void;
     value?: number;
+    initialValues?: InitialValues
 }
+
+export interface InitialValues {
+    count?: number;
+    maxCount: number;
+
+}
+
 export interface ProductTitleProps {
     title?: string;
     className?: string;
@@ -53,5 +60,15 @@ export interface onChangeArgs {
 
 export interface ProductInCart extends Product {
     count: number;
-  }
-  
+}
+
+
+export interface ProductCartHandlers {
+    count: number;
+    isMaxCountReached: boolean;
+    maxCount?: number;
+    product: Product,
+    increaseBy: (value: number) => void;
+    reset: () => void;
+
+}
