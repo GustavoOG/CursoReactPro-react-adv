@@ -1,0 +1,57 @@
+[
+  {
+    "type": "input",
+    "name": "firstName",
+    "placeholder": "Gustavo",
+    "label": "First Name",
+    "value": "",
+    "validations": [
+      {
+        "type": "required"
+      },
+      {
+        "type": "minLength",
+        "value": 5
+      }
+    ]
+  },
+  {
+    "type": "input",
+    "name": "lastName",
+    "placeholder": "Ortiz",
+    "label": "Last Name",
+    "value": "",
+    "validations": [
+      {
+        "type": "required"
+      }
+    ]
+  },
+  {
+    "type": "email",
+    "name": "email",
+    "placeholder": "correo@correo.com",
+    "label": "Email",
+    "value": "",
+    "validations": [
+      {
+        "type": "required"
+      },
+      {
+        "type": "email"
+      }
+    ]
+  },
+  {
+    "type": "select",
+    "name": "favoriteGame",
+    "placeholder": "",
+    "label": "Favorite Game",
+    "value": "",
+    "options": [
+      { "id": 1, "label": "Halo" },
+      { "id": 2, "label": "Super Smash" },
+      { "id": 3, "label": "Asassins creed" }
+    ]
+  }
+]
